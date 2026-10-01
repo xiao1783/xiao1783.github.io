@@ -1,0 +1,147 @@
+.contact-links,
+.resume-download,
+.copy-status {
+  flex-shrink: 0;
+}
+
+#sidebar {
+  overflow-y: auto;
+  scrollbar-width: thin;
+}
+
+.contact-links {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 7px;
+  margin-top: 18px;
+}
+
+.contact-links a,
+.contact-links button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  height: 40px;
+  padding: 0;
+  color: #566175;
+  background: #f5f7fb;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  font: 600 11px/1 "Segoe UI", "Microsoft YaHei", sans-serif;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.contact-links svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+.contact-links .contact-wechat {
+  color: #07c160;
+}
+
+.contact-links .contact-github {
+  color: #6e5494;
+}
+
+.contact-links .contact-wechat:hover,
+.contact-links .contact-wechat:focus-visible {
+  color: #06ad56;
+  background: #edfff4;
+  border-color: #a9e9c4;
+}
+
+.contact-links .contact-github:hover,
+.contact-links .contact-github:focus-visible {
+  color: #59427b;
+  background: #f5f0fb;
+  border-color: #d5c4e8;
+}
+
+.contact-links .contact-image img {
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+}
+
+.resume-download {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-height: 36px;
+  margin-top: 8px;
+  color: #fff;
+  background: var(--blue);
+  border-radius: 9px;
+  font-size: 11px;
+  font-weight: 700;
+  transition: .2s;
+}
+
+.resume-download:hover,
+.resume-download:focus-visible {
+  background: #1957c8;
+  box-shadow: 0 7px 16px rgba(36, 104, 232, .2);
+  outline: 0;
+  transform: translateY(-1px);
+}
+
+.resume-download svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+.site-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  margin-top: 36px;
+  padding: 22px 0 0;
+  color: #8b96a8;
+  border-top: 1px solid var(--line);
+  font-size: 10px;
+  letter-spacing: .02em;
+}
+
+.site-footer i {
+  color: #bcc5d1;
+  font-style: normal;
+}
+
+@media (max-width: 760px) {
+  .site-footer {
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 28px;
+    padding-top: 18px;
+    text-align: center;
+  }
+}
+
+.contact-links a:hover,
+.contact-links button:hover,
+.contact-links a:focus-visible,
+.contact-links button:focus-visible {
+  color: var(--blue);
+  background: #edf3ff;
+  border-color: #bed1f3;
+  outline: 0;
+}
+
+.copy-status {
+  min-height: 16px;
+  margin: 5px 0 0;
+  color: var(--blue);
+  font-size: 10px;
+  text-align: center;
+}
+
+.contact-links ~ .side-foot {
+  padding-top: 18px;
+}

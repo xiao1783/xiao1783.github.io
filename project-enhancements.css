@@ -1,0 +1,73 @@
+.project-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: -15px 0 20px;
+}
+
+.project-filters button {
+  padding: 9px 15px;
+  color: var(--muted);
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font: 600 12px/1 "Segoe UI", "Microsoft YaHei", sans-serif;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.project-filters button:hover {
+  color: var(--blue);
+  border-color: #b9cff7;
+}
+
+.project-filters button.active {
+  color: #fff;
+  background: var(--blue);
+  border-color: var(--blue);
+  box-shadow: 0 6px 16px rgba(36, 104, 232, .2);
+}
+
+.project-meta {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 7px;
+  margin: 14px 0 0;
+}
+
+.project-meta div {
+  min-width: 0;
+  padding: 10px;
+  background: var(--soft);
+  border: 1px solid var(--line);
+  border-radius: 9px;
+}
+
+.project-meta dt {
+  margin: 0 0 4px;
+  color: var(--blue);
+  font-size: 9px;
+  font-weight: 800;
+}
+
+.project-meta dd {
+  margin: 0;
+  color: var(--muted);
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.project-detail[hidden] {
+  display: none;
+}
+
+@media (max-width: 760px) {
+  .project-filters {
+    margin-top: -18px;
+  }
+
+  .project-meta {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,5 @@
+.ppt-render/
+.vite/
+tmp/
+.DS_Store
+Thumbs.db

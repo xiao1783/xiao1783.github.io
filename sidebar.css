@@ -1,0 +1,24 @@
+#sidebar {
+  align-self: start;
+  width: 100%;
+  min-height: calc(100vh - 48px);
+  height: auto;
+  overflow: visible;
+  scrollbar-width: auto;
+}
+
+@media (max-width: 1000px) {
+  #sidebar {
+    min-height: calc(100vh - 28px);
+    height: auto;
+  }
+}
+
+@media (max-width: 760px) {
+  #sidebar {
+    position: absolute;
+    min-height: calc(100vh - 58px);
+    height: auto;
+    overflow: visible;
+  }
+}

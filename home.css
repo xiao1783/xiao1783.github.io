@@ -1,0 +1,32 @@
+.welcome{grid-template-columns:.88fr 1.12fr;gap:34px;align-items:center;min-height:410px;background:linear-gradient(135deg,#fff 12%,#f3f7ff)}
+.welcome-copy{position:relative;z-index:2}
+.welcome-copy h1{font-size:52px;line-height:1.08;letter-spacing:-.055em;white-space:nowrap}
+.home-actions{display:flex;position:relative;align-items:center;flex-wrap:wrap;gap:9px;margin-top:24px}.home-action{display:inline-flex;min-height:40px;align-items:center;justify-content:center;padding:0 18px;border:1px solid transparent;border-radius:10px;font:700 12px/1 "Segoe UI","Microsoft YaHei",sans-serif;cursor:pointer}.home-action.primary{color:#fff;background:var(--blue)}.home-action.secondary{color:var(--blue);background:#fff;border-color:#cbdaf2}.home-action:hover,.home-action:focus-visible{box-shadow:0 8px 18px rgba(36,104,232,.16);outline:0;transform:translateY(-1px)}.home-contact-status{flex-basis:100%;min-height:14px;color:var(--blue);font-size:10px}
+.welcome-showcase{position:relative;min-height:330px}
+.showcase-label{position:absolute;z-index:4;top:0;right:5px;color:#2468e8;font-size:9px;font-weight:800;letter-spacing:.16em}
+.welcome-showcase img{position:absolute;object-fit:contain;background:#fff;border:5px solid #fff;border-radius:15px;box-shadow:0 18px 42px rgba(28,60,111,.2)}
+.showcase-main{z-index:1;right:0;bottom:48px;width:94%;height:auto;aspect-ratio:1.85 / 1;animation:showcaseFloatMain 6.4s ease-in-out .2s infinite}
+.showcase-card{z-index:2;width:43%;height:auto}
+.showcase-weather{aspect-ratio:2 / 1}
+.showcase-motion{aspect-ratio:1.78 / 1}
+.showcase-weather{left:0;top:42px;transform:rotate(-3deg);animation:showcaseFloatA 4.6s ease-in-out infinite}
+.showcase-motion{left:8%;bottom:0;transform:rotate(2deg);animation:showcaseFloatB 5.2s ease-in-out .35s infinite}
+@keyframes showcaseFloatA{0%,100%{transform:translateY(0) rotate(-3deg)}50%{transform:translateY(-8px) rotate(-2deg)}}
+@keyframes showcaseFloatB{0%,100%{transform:translateY(0) rotate(2deg)}50%{transform:translateY(7px) rotate(3deg)}}
+@keyframes showcaseFloatMain{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+@media(prefers-reduced-motion:reduce){.showcase-main,.showcase-weather,.showcase-motion{animation:none}}
+.metric-row article{position:relative;min-height:92px;padding-right:66px;overflow:hidden;transition:transform .2s,box-shadow .2s}
+.metric-row article::before{content:attr(data-icon);display:grid;position:absolute;right:16px;top:16px;width:38px;height:38px;place-items:center;color:#2468e8;background:linear-gradient(145deg,#e8f0ff,#f7faff);border:1px solid #dce8fc;border-radius:12px;font:700 18px/1 Georgia,serif}
+.metric-row article::after{content:"";position:absolute;right:-24px;bottom:-34px;width:78px;height:78px;background:rgba(36,104,232,.045);border-radius:50%}
+.metric-row article:hover{transform:translateY(-3px);box-shadow:0 12px 25px rgba(37,62,99,.09)}
+.home-highlights{grid-template-columns:repeat(3,1fr)}
+.home-highlights>a{display:block;min-width:0}
+.home-highlights article{height:100%;min-height:134px}
+.home-highlights em{display:block;margin-top:13px;color:var(--blue);font-size:10px;font-style:normal;font-weight:700}
+.feature-link{display:inline-block;margin-top:11px;color:var(--blue);font-size:10px;font-weight:700}
+.title-icon{display:inline-grid;width:29px;height:29px;margin-right:9px;place-items:center;color:#2468e8;background:#eaf1ff;border-radius:9px;font-size:15px;font-style:normal;vertical-align:2px}
+.updates,.focus{position:relative;overflow:hidden}
+.updates::after,.focus::after{content:"";position:absolute;z-index:0;right:-55px;bottom:-65px;width:145px;height:145px;border:22px solid rgba(36,104,232,.035);border-radius:50%;pointer-events:none}
+.updates>* ,.focus>*{position:relative;z-index:1}
+@media(max-width:1000px){.welcome{grid-template-columns:1fr}.welcome-showcase{min-height:300px}.showcase-main{width:82%}}
+@media(max-width:760px){.welcome-copy h1{font-size:clamp(31px,11vw,42px);letter-spacing:-.07em}.welcome-showcase{height:250px;min-height:250px;margin-top:24px}.showcase-main{width:94%}.showcase-card{width:43%}.showcase-label{top:-6px}.home-highlights{grid-template-columns:1fr}.metric-row article{padding-right:58px}.metric-row article::before{right:12px;width:34px;height:34px}}
