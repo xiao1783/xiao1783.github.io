@@ -39,4 +39,18 @@
 .study-method .clean-list{margin-top:12px}
 .study-method .image-card{height:330px;min-height:0;box-shadow:0 10px 25px rgba(37,62,99,.1)}
 .study-method .image-card img{object-position:center 56%}
+.trend-panel{padding:28px 30px!important;background:linear-gradient(135deg,#fff,#f7faff)}
+.trend-head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.trend-head h2{margin:4px 0 7px;font-size:22px}
+.trend-head p:last-child{margin:0;color:var(--muted);font-size:12px}
+.trend-gpa{display:flex;gap:12px}
+.trend-gpa>div{min-width:128px;padding:13px 16px;background:#f2f6fe;border:1px solid #e0e9f8;border-radius:13px}
+.trend-gpa b{display:block;color:var(--blue);font:800 23px/1 "Segoe UI",sans-serif;letter-spacing:-.02em}
+.trend-gpa span{display:block;margin-top:5px;color:var(--muted);font-size:10px;line-height:1.4}
+.trend-chart{display:grid;grid-template-columns:repeat(4,1fr);align-items:end;gap:26px;height:210px;margin-top:26px;padding:0 10px;border-bottom:2px solid #e4ecf8}
+.trend-bar{display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%}
+.trend-bar i{position:relative;display:block;width:min(72px,60%);height:var(--h);border-radius:10px 10px 0 0;background:linear-gradient(180deg,#5b93f5,#2468e8);box-shadow:0 8px 18px rgba(36,104,232,.22)}
+.trend-bar b{position:absolute;top:-26px;left:50%;transform:translateX(-50%);color:var(--navy);font:800 16px/1 "Segoe UI",sans-serif;white-space:nowrap}
+.trend-bar em{margin-top:10px;color:var(--muted);font-style:normal;font-size:11px}
+@media(max-width:760px){.trend-panel{padding:22px 20px!important}.trend-head{flex-direction:column;align-items:flex-start;gap:16px}.trend-gpa{width:100%}.trend-gpa>div{flex:1;min-width:0}.trend-chart{gap:10px;height:170px}.trend-bar i{width:80%}.trend-bar b{font-size:13px}.trend-bar em{font-size:10px}}
 @media(max-width:760px){.study-head{align-items:flex-start}.study-mark{width:76px;height:76px;border-radius:21px;font-size:27px}.study-mark small{margin-top:6px;font-size:6px}.academic-proof{grid-template-columns:1fr;padding:22px 20px;gap:16px}.proof-caption h2{font-size:20px}.score-panel{padding:24px!important}.score-panel .section-title{align-items:flex-start;gap:14px;flex-direction:column}.score-tabs{align-self:stretch}.score-tab{flex:1}.score-list{gap:8px 24px}.study-method article.panel{min-height:0}.study-method .image-card{height:250px}}
