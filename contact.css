@@ -44,7 +44,7 @@
 }
 
 .contact-links .contact-github {
-  color: #6e5494;
+  color: #24292f;
 }
 
 .contact-links .contact-wechat:hover,
@@ -56,15 +56,31 @@
 
 .contact-links .contact-github:hover,
 .contact-links .contact-github:focus-visible {
-  color: #59427b;
-  background: #f5f0fb;
-  border-color: #d5c4e8;
+  color: #111519;
+  background: #f0f3f7;
+  border-color: #c9d2de;
 }
 
-.contact-links .contact-image img {
-  width: 26px;
-  height: 26px;
-  object-fit: contain;
+.contact-links .contact-qq {
+  color: #12b7f5;
+}
+
+.contact-links .contact-csdn {
+  color: #fc5531;
+}
+
+.contact-links .contact-qq:hover,
+.contact-links .contact-qq:focus-visible {
+  color: #0ea2dd;
+  background: #e9f8fe;
+  border-color: #b0e2f8;
+}
+
+.contact-links .contact-csdn:hover,
+.contact-links .contact-csdn:focus-visible {
+  color: #e04a2b;
+  background: #fff1ee;
+  border-color: #f8c5bb;
 }
 
 .resume-download {
@@ -132,6 +148,8 @@
   background: #edf3ff;
   border-color: #bed1f3;
   outline: 0;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(22, 44, 78, .12);
 }
 
 .copy-status {
