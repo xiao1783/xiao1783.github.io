@@ -10,7 +10,7 @@ const mainContent = document.querySelector('main');
 if (mainContent) {
   mainContent.id = 'main-content';
   document.body.insertAdjacentHTML('afterbegin', '<a class="skip-link" href="#main-content">跳到主要内容</a>');
-  mainContent.insertAdjacentHTML('beforeend', '<footer class="site-footer"><span>© 2026 王耀堂</span><i aria-hidden="true">·</i><span>Last updated: 2026.09</span></footer>');
+  mainContent.insertAdjacentHTML('beforeend', '<footer class="site-footer"><span>© 2026 王耀堂</span><i aria-hidden="true">·</i><span>Last updated: 2026.10</span></footer>');
 }
 const contactIcons = {
   wechat: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.4 4.2c-4.1 0-7.4 2.7-7.4 6 0 1.9 1.1 3.5 2.8 4.6l-.7 2.4 2.8-1.4c.8.2 1.6.4 2.5.4h.4a5.7 5.7 0 0 1-.3-1.8c0-3.2 3-5.8 6.8-6.1C15.3 5.9 12.6 4.2 9.4 4.2Zm-2.6 4a1 1 0 1 1 0-2 1 1 0 0 1 0 2Zm5 0a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"/><path d="M22 14.5c0-2.8-2.7-5.1-6-5.1s-6 2.3-6 5.1 2.7 5.1 6 5.1c.7 0 1.4-.1 2.1-.3l2.3 1.2-.6-2c1.4-.9 2.2-2.4 2.2-4Zm-8-1.7a.8.8 0 1 1 0-1.6.8.8 0 0 1 0 1.6Zm4 0a.8.8 0 1 1 0-1.6.8.8 0 0 1 0 1.6Z"/></svg>',

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://xiao1783.github.io/sitemap.xml
