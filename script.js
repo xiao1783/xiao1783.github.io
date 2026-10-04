@@ -1,5 +1,7 @@
 document.head.insertAdjacentHTML('beforeend', '<link rel="stylesheet" href="contact.css"><link rel="stylesheet" href="features.css"><link rel="stylesheet" href="sidebar.css"><link rel="stylesheet" href="project-enhancements.css">');
 const page = document.body.dataset.page;
+const langNow = () => { try { return JSON.parse(localStorage.getItem('portfolioLanguage')) === 'en' ? 'en' : 'zh'; } catch { return 'zh'; } };
+const contactLabelsEn = { 微信: 'WeChat', 微信号: 'WeChat ID', QQ: 'QQ', CSDN: 'CSDN' };
 const items = [
   ['home', 'index.html', '首页概览', '⌂'], ['profile', 'profile.html', '个人档案', '◉'],
   ['study', 'study.html', '学业表现', '▤'], ['projects', 'projects.html', '项目成果', '◇'],
@@ -40,16 +42,18 @@ document.querySelectorAll('[data-copy-contact]').forEach((button) => button.addE
   try {
     await copyContact(button.dataset.copyContact);
     const status = button.closest('.home-actions')?.querySelector('.home-contact-status') || copyStatus;
-    status.textContent = `${button.dataset.contactLabel}已复制`;
+    const en = langNow() === 'en';
+    const label = en ? (contactLabelsEn[button.dataset.contactLabel] || button.dataset.contactLabel) : button.dataset.contactLabel;
+    status.textContent = en ? `${label} copied` : `${label}已复制`;
   } catch {
     const status = button.closest('.home-actions')?.querySelector('.home-contact-status') || copyStatus;
-    status.textContent = '复制失败，请手动复制';
+    status.textContent = langNow() === 'en' ? 'Copy failed, please copy manually' : '复制失败，请手动复制';
   }
 }));
 menuButton?.setAttribute('aria-expanded', 'false');
 menuButton?.addEventListener('click', () => {
   const open = sidebar.classList.toggle('open');
-  menuButton.textContent = open ? '关闭' : '导航';
+  menuButton.textContent = open ? (langNow() === 'en' ? 'Close' : '关闭') : (langNow() === 'en' ? 'Menu' : '导航');
   menuButton.setAttribute('aria-expanded', String(open));
 });
 sidebar.querySelectorAll('nav a').forEach((link) => link.addEventListener('click', () => {
@@ -59,7 +63,7 @@ sidebar.querySelectorAll('nav a').forEach((link) => link.addEventListener('click
 document.addEventListener('keydown', (event) => {
   if (event.key === 'Escape' && sidebar.classList.contains('open')) {
     sidebar.classList.remove('open');
-    menuButton.textContent = '导航';
+    menuButton.textContent = langNow() === 'en' ? 'Menu' : '导航';
     menuButton.setAttribute('aria-expanded', 'false');
     menuButton.focus();
   }
