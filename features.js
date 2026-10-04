@@ -141,6 +141,62 @@
   statsModal.addEventListener('click', (event) => { if (event.target === statsModal || event.target.closest('.stats-close')) closeStats(); });
   document.addEventListener('keydown', (event) => { if (event.key === 'Escape' && statsModal.classList.contains('open')) closeStats(); });
 
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const progressBar = document.createElement('div');
+  progressBar.className = 'scroll-progress';
+  document.body.append(progressBar);
+  const updateProgress = () => {
+    const max = document.documentElement.scrollHeight - window.innerHeight;
+    progressBar.style.width = (max > 0 ? (window.scrollY / max) * 100 : 0) + '%';
+  };
+  window.addEventListener('scroll', updateProgress, { passive: true });
+  window.addEventListener('resize', updateProgress);
+  updateProgress();
+
+  if (!reduceMotion && 'IntersectionObserver' in window) {
+    const revealTargets = [...document.querySelectorAll('.panel,.metric-row article,.honor-grid article,.journey-item,.three-cards article,.role-grid article,.experience-card,.party-steps li,.feature-card,.campus-gallery figure')];
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) { entry.target.classList.add('in'); revealObserver.unobserve(entry.target); }
+      });
+    }, { threshold: .1, rootMargin: '0px 0px -6% 0px' });
+    revealTargets.forEach((el) => {
+      const group = el.parentElement ? [...el.parentElement.children].filter((c) => c.classList.contains('rv')) : [];
+      el.style.transitionDelay = Math.min(Math.max(group.indexOf(el), 0), 8) * 70 + 'ms';
+      el.classList.add('rv');
+      revealObserver.observe(el);
+    });
+
+    const countTargets = [...document.querySelectorAll('.academic-hero article strong,.transfer-metrics b,.experience-metrics .role-icon,.role-grid .role-icon')];
+    const animateCount = (el) => {
+      const original = el.textContent;
+      const match = original.match(/\d+(\.\d+)?/);
+      if (!match) return;
+      const target = parseFloat(match[0]);
+      if (!Number.isFinite(target) || target === 0) return;
+      const decimals = (match[0].split('.')[1] || '').length;
+      const padded = original.trim() === match[0] && match[0].length > 1 && !match[0].includes('.');
+      const duration = 950;
+      let start;
+      const step = (ts) => {
+        if (start === undefined) start = ts;
+        const p = Math.min((ts - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - p, 3);
+        const val = (target * eased).toFixed(decimals);
+        el.textContent = original.replace(match[0], padded && p < 1 ? val.padStart(match[0].length, '0') : val);
+        if (p < 1) requestAnimationFrame(step);
+        else el.textContent = original;
+      };
+      requestAnimationFrame(step);
+    };
+    const countObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) { animateCount(entry.target); countObserver.unobserve(entry.target); }
+      });
+    }, { threshold: .5 });
+    countTargets.forEach((el) => countObserver.observe(el));
+  }
+
   const translations = {
     '首页概览': 'Home', '个人档案': 'Profile', '学业表现': 'Academics', '项目成果': 'Projects',
     '荣誉奖项': 'Honors', '实践经历': 'Experience', '校园工作': 'Campus',

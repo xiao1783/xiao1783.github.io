@@ -8,12 +8,11 @@
 .profile-label{color:#2468e8;font-size:10px;font-weight:800;letter-spacing:.18em}
 .profile-lead h2{margin:14px 0 18px;font-size:32px;line-height:1.35;letter-spacing:-.045em}
 .profile-lead p{max-width:620px;margin:8px 0;color:#687386;font-size:14px;line-height:1.9}
-.profile-note{position:relative;display:flex;flex-direction:column;justify-content:center;padding:26px 28px;color:#fff;background:linear-gradient(145deg,#152645,#2c568d);border-radius:20px;overflow:hidden;box-shadow:0 14px 30px rgba(17,32,61,.17)}
-.profile-note::after{content:"";position:absolute;right:-40px;bottom:-55px;width:170px;height:170px;border:26px solid rgba(255,255,255,.08);border-radius:50%}
-.profile-note i{height:28px;color:#9fc0ff;font:italic 46px/1 Georgia,serif}
+.profile-note{position:relative;display:flex;flex-direction:column;justify-content:center;padding:26px 28px;color:var(--navy);background:linear-gradient(145deg,#edf3fe,#fbfdff);border:1px solid #d9e5f8;border-radius:20px;overflow:hidden;box-shadow:0 14px 30px rgba(37,78,139,.08)}
+.profile-note i{height:28px;color:#2468e8;font:italic 46px/1 Georgia,serif}
 .profile-note p{position:relative;z-index:1;margin:13px 0 22px;font:600 19px/1.7 Georgia,"Microsoft YaHei",serif}
-.profile-note span{color:#b9cae7;font-size:10px;font-weight:800;letter-spacing:.14em}
-.skill-matrix{margin:24px 0 18px}.skill-matrix>.section-title{margin-bottom:16px}.skill-matrix>.section-title h2{margin:3px 0 0;font-size:25px}.skill-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}.skill-card{position:relative;display:flex;min-height:255px;flex-direction:column;padding:22px 20px;overflow:hidden;transition:.2s}.skill-card::after{content:"";position:absolute;right:-24px;top:-28px;width:90px;height:90px;border:15px solid rgba(36,104,232,.05);border-radius:50%;pointer-events:none}.skill-card:hover{transform:translateY(-3px);box-shadow:0 12px 26px rgba(37,62,99,.1)}.skill-number{display:grid;width:32px;height:32px;place-items:center;color:var(--blue);background:#eaf1ff;border-radius:9px;font-size:10px;font-weight:800}.skill-card h3{margin:15px 0 11px;font-size:17px}.skill-tags{display:flex;flex-wrap:wrap;gap:6px}.skill-tags span{padding:5px 7px;color:#315580;background:#f2f6fc;border:1px solid #e3eaf4;border-radius:7px;font-size:10px;font-weight:600}.skill-card p{margin:13px 0 15px;color:var(--muted);font-size:11px;line-height:1.7}.skill-card small{margin-top:auto;color:#94a0b2;font-size:9px;font-weight:700;letter-spacing:.08em}.skill-card a{margin-top:5px;color:var(--blue);font-size:11px;font-weight:700}.skill-card a:hover{text-decoration:underline}
+.profile-note span{color:#687386;font-size:10px;font-weight:800;letter-spacing:.14em}
+.skill-matrix{margin:24px 0 18px}.skill-matrix>.section-title{margin-bottom:16px}.skill-matrix>.section-title h2{margin:3px 0 0;font-size:25px}.skill-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}.skill-card{position:relative;display:flex;min-height:255px;flex-direction:column;padding:22px 20px;overflow:hidden;transition:.2s}.skill-card:hover{transform:translateY(-3px);box-shadow:0 12px 26px rgba(37,62,99,.1)}.skill-number{display:grid;width:32px;height:32px;place-items:center;color:var(--blue);background:#eaf1ff;border-radius:9px;font-size:10px;font-weight:800}.skill-card h3{margin:15px 0 11px;font-size:17px}.skill-tags{display:flex;flex-wrap:wrap;gap:6px}.skill-tags span{padding:5px 7px;color:#315580;background:#f2f6fc;border:1px solid #e3eaf4;border-radius:7px;font-size:10px;font-weight:600}.skill-card p{margin:13px 0 15px;color:var(--muted);font-size:11px;line-height:1.7}.skill-card small{margin-top:auto;color:#94a0b2;font-size:9px;font-weight:700;letter-spacing:.08em}.skill-card a{margin-top:5px;color:var(--blue);font-size:11px;font-weight:700}.skill-card a:hover{text-decoration:underline}
 .journey{margin:24px 0 18px}
 .journey>.section-title{margin-bottom:22px}
 .journey>.section-title h2{margin:3px 0 0;font-size:25px}
@@ -33,7 +32,6 @@
 .profile-values>.section-title h2{margin:3px 0 0;font-size:25px}
 .profile-values .three-cards{margin:0}
 .profile-values .three-cards article{position:relative;overflow:hidden;padding:25px 27px;transition:.2s}
-.profile-values .three-cards article::after{content:"";position:absolute;right:-28px;bottom:-34px;width:100px;height:100px;border:17px solid rgba(36,104,232,.06);border-radius:50%}
 .profile-values .three-cards article:hover{transform:translateY(-3px);box-shadow:0 12px 26px rgba(37,62,99,.1)}
 .profile-values .three-cards article>span{display:grid;width:34px;height:34px;place-items:center;background:#eaf1ff;border-radius:10px}
 .profile-values .three-cards h3{margin-top:17px}
